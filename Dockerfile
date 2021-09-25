@@ -10,6 +10,7 @@ ARG PYINSTALLER_VERSION=4.5.1
 RUN set -x \
     && dpkg --add-architecture i386 \
     && apt-get update -qy \
+    && apt-get install -y libsdl2-ttf-2.0-0
     && apt-get install --no-install-recommends -qfy apt-transport-https software-properties-common wget \
     && wget -nv https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
